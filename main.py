@@ -1,7 +1,17 @@
-import random
 from worlds.grasslands import grasslands
 from worlds.badlands import badlands
 from worlds.swamps import swamps
+
+import random
+from os import system, name
+from time import sleep
+
+
+def clear_text():
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ = system('clear')
 
 
 def world(start, name):
@@ -18,17 +28,16 @@ def world(start, name):
 def main():
     print("What is your name?\n")
     name = str(input(
-        'Hint: if a statement ends in ":" that means you need to input a value. It will usually say what the options are\nEnter the name you want:\n'))
-
+        'Hint: if a statement ends in ":" that means you need to input a value. It will usually say what the options are.\nEnter the name you want:\n'))
+    clear_text()
     print("\nHello", name, "it is nice to meet you.")
-    input(
-        "Hint: If you are ever hovering in a spot and no text has spawned hit enter to continue to next text. This is to not bombard you with walls of text in one go for example\n")
+    input("Press Enter to continue")
+    clear_text()
 
     print(
         "You have the option of 3 starts: the badlands, grasslands, and swamps. Depending on where you start you'll have a different experience. You can make the decision yourself or let luck do it for you.")
-    input()
-    print(
-        "Three doors drop in front of you the first a sand-colored door the second a pleasant green and the last a smudgy blue with splotches of green\n")
+    input("Press Enter to continue")
+    print("Three doors drop in front of you the first a sand-colored door the second a pleasant green and the last a smudgy blue with splotches of green\n")
 
     print('well', name, 'what is your choice? (1, 2, 3 or RNG)')
     start = str(input('Let\'s go with:\n'))
@@ -49,9 +58,9 @@ def main():
     else:
         print('\nSwamps is a hidden gem if you ask me there is nothing quite like it in terms of looks')
 
-    input()
+    input("Press Enter to continue")
     print('It was nice talking to you', name, 'I pray thee be careful on your journey')
-
+    sleep(3)
     world(start, name)
 
 
