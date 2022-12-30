@@ -18,7 +18,7 @@ def world(start, name):
 def main():
     print("What is your name?\n")
     name = str(input(
-        'Hint: if a statement ends in ":" that means you need to input a value it will usually say what the options are\nEnter the name you want:\n'))
+        'Hint: if a statement ends in ":" that means you need to input a value. It will usually say what the options are\nEnter the name you want:\n'))
 
     print("\nHello", name, "it is nice to meet you.")
     input(
