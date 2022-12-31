@@ -27,40 +27,43 @@ def world(start, name):
 
 def main():
     print("What is your name?\n")
-    name = str(input(
-        'Hint: if a statement ends in ":" that means you need to input a value. It will usually say what the options are.\nEnter the name you want:\n'))
+    print('\nHint: if a statement ends with ":" that means you need to input a value. It will usually say what the options are.\n')
+    name = str(input('Enter the name you want:\n'))
     clear_text()
-    print("\nHello", name, "it is nice to meet you.")
+    print("Hello", name, "it is nice to meet you.")
+
     input("Press Enter to continue")
     clear_text()
 
-    print(
-        "You have the option of 3 starts: the badlands, grasslands, and swamps. Depending on where you start you'll have a different experience. You can make the decision yourself or let luck do it for you.")
+    print("To start your adventure you have 3 options: the badlands, grasslands, and swamps.\nDepending on where you start you'll have a different experience.\nYou can either make the decision yourself or let luck do it for you.")
     input("Press Enter to continue")
-    print("Three doors drop in front of you the first a sand-colored door the second a pleasant green and the last a smudgy blue with splotches of green\n")
-
-    print('well', name, 'what is your choice? (1, 2, 3 or RNG)')
+    clear_text()
+    print("Three doors drop in front of you.\nThe first a sand-colored door, the second a pleasant green, and the last a smudgy blue with splotches of green.")
+    print('Well,', name + ',', 'what\'s your choice? (1, 2, 3 or RNG)')
     start = str(input('Let\'s go with:\n'))
 
+    # check input
     while (start.lower() != 'rng' and start != '1' and start != '2' and start != '3'):
-        start = str(input('pleas enter a correct value, 1,2,3 or RNG:'))
+        start = str(input('pleas enter a correct value (1, 2, 3 or RNG):'))
 
+    # Random start
     if (start.lower() == 'rng'):
         start = random.randint(1, 3)
     else:
         start = int(start)
 
+    # Description of start world
     if (start == 1):
         print(
-            '\nAh the badlands a place that is both empty and full at the same time isn\'t it strange how things like that can exist.')
+            '\nAh the badlands a place that is both empty and full at the same time.\nIsn\'t it strange how things like that can exist.')
     elif (start == 2):
         print('\nthe good old grass lands a beautiful place, but not without its flaws')
     else:
         print('\nSwamps is a hidden gem if you ask me there is nothing quite like it in terms of looks')
 
-    input("Press Enter to continue")
     print('It was nice talking to you', name, 'I pray thee be careful on your journey')
     sleep(3)
+    clear_text()
     world(start, name)
 
 
